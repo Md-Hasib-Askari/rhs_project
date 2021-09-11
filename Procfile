@@ -1,0 +1,1 @@
+web: waitress-serve --port=$PORT rhs_project.wsgi:application 

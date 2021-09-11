@@ -1,0 +1,101 @@
+<div class="row bg-dark text-light border-bottom border-danger" style='border-bottom-width: 5px!important;'>
+    <div class="col-9 mx-auto">
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        At a Glance
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'welcome_note' %}">Welcome Note</a>
+                        <a class="dropdown-item" href="{% url 'about_us' %}">About Us</a>
+                        <a class="dropdown-item" href="{% url 'vision_mission' %}">Vision &#038; Mission</a>
+                        <a class="dropdown-item" href="{% url 'principal_message' %}">Principal’s Message</a>
+                        <a class="dropdown-item" href="{% url 'governing_body' %}">Governing Body</a>
+                        <a class="dropdown-item" href="{% url 'curriculum' %}">Curriculum</a>
+                        <a class="dropdown-item" href="{% url 'maps' %}">Maps and Directions</a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Academics
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'rules_regulations' %}">Rules &#038; Regulation</a>
+                        <a class="dropdown-item" href="{% url 'teaching_method' %}">Teaching Method</a>
+                        <a class="dropdown-item" href="{% url 'teachers_training' %}">Teacher’s Training</a>
+                        <a class="dropdown-item" href="{% url 'student_support' %}">Student Support</a>
+                        <a class="dropdown-item" href="{% url 'scholarship' %}">Scholarship</a>
+                        <a class="dropdown-item" href="{% url 'result' %}">Result</a>
+                        <a class="dropdown-item" href="{% url 'co_curricular_activities' %}">Co-curricular Activities</a>
+                        <a class="dropdown-item" href="{% url 'facilities' %}">Facilities</a>
+                        <a class="dropdown-item" href="{% url 'faculties_staffs' %}">Faculties and Staffs</a>
+                        <a class="dropdown-item" href="{% url 'prospectus_syllabus' %}">Prospectus &#038; Syllabus</a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administration
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'calendar' %}">Calendar</a>
+                        <a class="dropdown-item" href="{% url 'time' %}">Time</a>
+                        <a class="dropdown-item" href="{% url 'jobs' %}">Jobs &#038; Vacancies</a>
+                        <a class="dropdown-item" href="{% url 'notices' %}">Notice</a>
+                        <a class="dropdown-item" href="{% url 'teachers_info' %}">Teacher&#8217;s Information</a>
+                        <a class="dropdown-item" href="{% url 'staffs_info' %}">Staff&#8217;s Information</a>
+                        <a class="dropdown-item" href="{% url 'student_statistics' %}">Student Statistics</a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admission
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'admission_notices' %}">Admission Notice</a>
+                        <a class="dropdown-item" href="{% url 'jsc' %}">JSC</a>
+                        <a class="dropdown-item" href="{% url 'ssc' %}">SSC</a>
+                        <a class="dropdown-item" href="{% url 'fee_payment_procedure' %}">Fee Payment Procedure</a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Events
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'celebrations' %}">Celebration of National Days</a>
+                        <a class="dropdown-item" href="{% url 'sports' %}">Sports</a>
+                        <a class="dropdown-item" href="{% url 'cultural_activities' %}">Cultural Activities</a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gallery
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'photo_gallery' %}">Photo Gallery</a>
+                        <a class="dropdown-item" href="{% url 'video_gallery' %}">Video Gallery</a>
+                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'admin:index' %}" class="btn btn-outline-success auth-btn btn-sm mr-1">Dashboard</a>
+                <a href="{% url 'admin:logout' %}" class="btn btn-danger auth-btn btn-sm">Logout</a>
+            {% else %}
+                <a href="{% url 'admin:login' %}" class="btn btn-danger auth-btn btn-sm">Login</a>
+            {% endif %}
+        </nav>    
+    </div>
+</div>

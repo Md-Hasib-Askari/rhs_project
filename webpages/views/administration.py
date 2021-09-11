@@ -1,0 +1,70 @@
+from django.shortcuts import render
+
+from webpages.common_db_imports import *
+from webpages.models import StaticPage
+
+# Create your views here.
+def calendar(request):
+    page_content = StaticPage.objects.get(slug='calendar')
+    context['page_content'] = page_content
+
+    template_name = 'webpages/administration/calendar.html'
+
+    return render(request, template_name, context)
+
+def time(request):
+    page_content = StaticPage.objects.get(slug='time')
+    context['page_content'] = page_content
+
+    template_name = 'webpages/administration/time.html'
+
+    return render(request, template_name, context)
+
+def jobs(request):
+    page_content = StaticPage.objects.get(slug='jobs')
+    context['page_content'] = page_content
+
+    template_name = 'webpages/administration/jobs.html'
+
+    return render(request, template_name, context)
+
+def notices(request):
+    template_name = 'webpages/administration/notices.html'
+
+    return render(request, template_name, context)
+
+def notice(request, id):
+    single_notice = NoticeBoard.objects.get(id=id)
+
+    context['single_notice'] = single_notice
+    template_name = 'webpages/administration/notice.html'
+    return render(request, template_name, context)
+
+def teachers_info(request):
+    page_content = StaticPage.objects.get(slug='teachers_info')
+    context['page_content'] = page_content
+
+    template_name = 'webpages/administration/teachers_info.html'
+
+    return render(request, template_name, context)
+
+
+def staffs_info(request):
+    page_content = StaticPage.objects.get(slug='staffs_info')
+    context['page_content'] = page_content
+
+    template_name = 'webpages/administration/staffs_info.html'
+
+    return render(request, template_name, context)
+
+def student_statistics(request):
+    page_content = StaticPage.objects.get(slug='student_statistics')
+    context['page_content'] = page_content
+
+    template_name = 'webpages/administration/student_statistics.html'
+
+    return render(request, template_name, context)
+
+
+
+

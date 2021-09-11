@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card shadow google-calendar">
+  <div class="card-header">
+    <h5 class="card-title">{{page_content.page_name}}</h5>
+  </div>
+  <div class="card-body mb-4">
+    <p class="card-text">{{page_content.page_content|safe}}</p>
+
+    <!-- Google Calendar -->
+    <iframe src="https://calendar.google.com/calendar/embed?src=rq1jn2mniusjm7ksvb9qj1ac7o%40group.calendar.google.com&ctz=Asia%2FDhaka" style="border: 0" height="600" frameborder="0" scrolling="no" class="d-block mx-auto w-75"></iframe>
+
+  </div>
+</div>
+{% endblock content %}

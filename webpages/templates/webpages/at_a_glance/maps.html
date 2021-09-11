@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card shadow google-map-api">
+  <div class="card-header">
+    <h5 class="card-title">{{page_content.page_name}}</h5>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{page_content.page_content|safe}}</p>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.224459565784!2d90.76673061673526!3d23.88165807635009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37543a6b365f62d9%3A0x7a73b00fde22e7e1!2sRasulpur%20High%20School!5e0!3m2!1sen!2sbd!4v1631133062019!5m2!1sen!2sbd" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+  </div>
+</div>
+{% endblock content %}

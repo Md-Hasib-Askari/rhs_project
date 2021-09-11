@@ -1,0 +1,160 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'core/css/calendar.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+
+    <title>{% block title %}{% endblock title %} | Rasulpur High School</title>
+  </head>
+  <body>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+              <!-- Top contact section -->
+              <div class="row primary-bar text-light">
+                  <div class="col-9 mx-auto">
+                    <div class="d-flex top-contact-info">
+                        <div class="phone">
+                            <span><i class="fas fa-phone-alt"></i></span>
+                            <span>{{header_data.phone_no}}</span>   
+                        </div>
+                        <div class="email ml-3">
+                            <span class=""><i class="fas fa-envelope"></i></span>   
+                            <span>{{header_data.email}}</span>   
+                        </div>
+                    </div>
+                  </div>
+              </div>
+
+              <!-- Header Section -->
+              <div class="row">
+                  <div class="col-lg-9 col-md-12 header-div mx-auto d-flex">
+                      <div class="block-test">
+                          <a href="{% url 'home' %}"><img src="{{header_data.logo.url}}" alt="Institution Logo" width="150px" height="150px"></a>
+                      </div>
+
+                      <div class="header d-flex h-100 flex-column ml-3 mt-3">
+
+                          <div class="header-title">
+                              <h2 class="display-4">{{header_data.header_title}}</h2>
+                          </div>
+                          <div class="header-slogan">
+                              <p class="lead">{{header_data.header_slogan}}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            
+
+              <!-- Navbar Section -->
+              {% include 'webpages/navbar.html' %}
+
+            
+              <!-- Main Content Section -->
+              <div class="row mt-2">
+                <div class="col-xl-9 mx-auto">
+                    <div class="row">
+                        <div class="col-lg-9 mb-3">
+                            {% block content %}
+                            {% endblock content %}
+                            
+                        </div>
+
+                        <!-- Right Sidebar -->
+                        <div class="col-lg-3">
+
+                            <!-- Banner -->
+                            {% if sidebar_banner.banner_image.url %}
+                            <div class="card border-dark mb-3 primary-border">
+                                <div class="card-body text-dark p-0">
+                                      <img class="card-img" src="{{sidebar_banner.banner_image.url}}" alt="Banner Image">
+                                </div>
+                            </div> 
+                            {% endif %}
+
+                            <!-- Notice Board -->
+                            <div class="card border-dark mb-3 link-font primary-border">
+                                <div class="card-header">Notice Board</div>
+                                <div class="card-body text-dark pt-0  link-font">
+                                    <marquee behavior="scroll" direction="up" scrollamount="5" style="min-height: 220px">
+                                    {% for notice in notices %}
+                                        <p class="card-title"><a href="{% url 'notice' notice.id %}">{{notice.notice_title}}</a></p>
+
+                                        
+                                    {% endfor %}
+                                    </marquee>
+                                    <div class="small text-right"><a href="{% url 'notices' %}">More...</a></div>
+                                </div>
+                            </div>   
+
+                            <!-- Useful Links -->
+                            <div class="card border-dark mb-3 primary-border">
+                                <div class="card-header">Useful Links</div>
+                                <div class="card-body text-dark link-font">
+                                {% for link in links %}
+                                    <p class="card-title"><a href="{{link.link_url}}" target="_blank">{{link.link_title}}</a></p>
+                                {% endfor %}
+                                </div>
+                            </div>  
+                            
+                            <!-- Facebook Page -->
+                            <div class="card border-dark mb-3 facebool-plugin primary-border">
+                                <div class="card-header">Facebook Page</div>
+                                <div class="card-body p-0 mx-auto w-100 text-center">
+                                    
+                                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Frhschool112681&tabs=timeline%2C%20messages%2C%20events&width=320&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="320" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                                </div>
+                            </div>
+                            
+
+                            <!-- Calendar -->
+                            <div class="card border-dark mb-3 primary-border">
+                                <div class="card-header">Calendar</div>
+                                <div class="card-body text-dark p-0">
+                                    {% include 'core/calendar.html' %}
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <!-- Footer Section -->
+              <div class="row primary-bar text-light mt-3">
+                <div class="col-12 text-center">
+                    <p class="my-3">Copyright &copy All rights reserved. Developed by <a href="#" class="text-danger">Md Hasib Askari</a></p>
+                </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="{% static 'core/js/calendar.js' %}"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/all.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+    <script src="{% static 'core/js/script.js' %}"></script>
+  </body>
+</html>

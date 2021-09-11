@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card border-dark mb-3">
+    <div class="card-header">
+      <h4>{{single_admission_notice.admission_notice_title}}</h4>
+    </div>
+    <div class="card-body text-dark">
+        <p class="card-text">{{single_admission_notice.admission_notice_content|safe}}</p>
+    </div>
+</div> 
+{% endblock content %}

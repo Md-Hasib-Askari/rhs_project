@@ -20,9 +20,6 @@ urlpatterns = [
     # Navigation - Administration 
     path('calendar/', administration.calendar, name='calendar'),
     path('time/', administration.time, name='time'),
-    path('notices/', administration.notices, name='notices'),
-    path('notice/<str:id>', administration.notice, name='notice'),
-
     path('teachers_info/', administration.teachers_info, name='teachers_info'),
     path('staffs_info/', administration.staffs_info, name='staffs_info'),
     path('student_statistics/', administration.student_statistics, name='student_statistics'),

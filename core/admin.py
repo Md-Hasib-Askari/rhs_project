@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import IPAddress
+
+@admin.register(IPAddress)
+class IPAdmin(admin.ModelAdmin):
+    list_display = ['id', 'ip_address', 'visited_on',]

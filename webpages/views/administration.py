@@ -28,17 +28,6 @@ def jobs(request):
 
     return render(request, template_name, context)
 
-def notices(request):
-    template_name = 'webpages/administration/notices.html'
-
-    return render(request, template_name, context)
-
-def notice(request, id):
-    single_notice = NoticeBoard.objects.get(id=id)
-
-    context['single_notice'] = single_notice
-    template_name = 'webpages/administration/notice.html'
-    return render(request, template_name, context)
 
 def teachers_info(request):
     page_content = StaticPage.objects.get(slug='teachers_info')

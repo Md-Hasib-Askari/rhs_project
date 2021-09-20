@@ -10,6 +10,6 @@ class StaticPageAdmin(admin.ModelAdmin):
     def save_model(self, request, instance, form, change):
         form = form.save(commit=False)
         if not change or not instance.author:
-            instance.author = request.user
+            instance.author = str(request.user)
         instance.save()
         return instance

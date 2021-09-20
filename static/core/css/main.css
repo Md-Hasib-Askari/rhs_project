@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lobster&family=Ubuntu&family=Urbanist&family=Galada&family=Work+Sans&family=Hind+Siliguri&display=swap');
+
+:root {
+    /* Bootstrap Breakpoint Overrides */
+
+    /* Website Font Customizations */
+    /* Fonts */
+    --header-font: 'Galada', cursive;
+    --links-font: 'Ubuntu', sans-serif;
+    /* --default-font: 'Urbanist', sans-serif; */
+    --default-font: 'Work Sans', sans-serif;
+    --bangla-font: 'Hind Siliguri', sans-serif;
+
+    /* Colors */
+    --primary-color: #437fc7;
+    --secondary-color: #6daffe;
+    --bg-color: #edf6ff;
+    --text-color: #424242;
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: #dc3545;
+}
+.shadow{
+    box-shadow: 3px 3px 10px #a0a0a2!important;
+}
+html, body{
+    font-family: var(--bangla-font);
+    background-color: var(--bg-color);
+    color: var(--text-color)
+}
+.block-test a img {
+    margin: 10px 0;
+}
+.header-title {
+    font-family: var(--header-font);
+    text-shadow: 2px 3px 3px #424242b8;
+}
+.header-slogan {
+    font-family: var(--bangla-font);
+}
+.card-title {
+    color: #fff;
+}
+.link-font {
+    font-family: var(--links-font);
+}
+.bangla-post {
+    font-family: var(--bangla-font);
+    font-size: 1.25rem;
+}
+
+/* .bangla-post .card-body p {
+} */
+.bangla-post .card-body p img{
+    max-width: 800px!important;
+    margin: 0 auto;
+    display: block;
+}
+.top-contact-info div {
+    padding: 5px 0;
+}
+
+/* Color Adjustments */
+.primary-bar {
+    background-color: var(--primary-color);
+}
+.primary-border {
+    border-color: var(--primary-color)!important;
+}
+.card {
+    border-color: var(--primary-color);
+}
+.card-header:first-child {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+/* Responsive Media Queries */
+
+@media (max-width: 592px){
+
+    .top-contact-info div span {
+        font-size: 12px;
+    }
+}
+@media (max-width:463px){
+    .d-flex.top-contact-info {
+        flex-direction: column!important;
+    }
+    .top-contact-info > div {
+        margin: 0!important;
+    }
+
+    .header-div {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .header-div .header {
+        margin: 0!important;
+
+    }
+}
+
+@media (max-width: 674px){
+    .header-div {
+        justify-content: center;
+    }
+    .header-div .header .header-title h2{
+        /* flex-direction: column!important; */
+        font-size: 30px;
+    }
+    .header-div .header .header-slogan p{
+        /* flex-direction: column!important; */
+        font-size: 14px;
+    }
+    
+}
+
+@media(max-width: 285px){
+    .top-contact-info div span {
+        font-size: 10px;
+    }
+    .header .header-title h2 {
+        font-size: 20px!important;
+    }
+}
+

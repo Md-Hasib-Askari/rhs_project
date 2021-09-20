@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block title %}Posts{% endblock title %}
+
+{% block content %}
+	<div class="card shadow bangla-post">
+		<div class="card-header">{{feed_post.post_title}}</div>
+		<div class="card-body">
+			{{feed_post.post_content|safe}}
+			<hr>
+			<small>{{feed_post.privacy}}</small>
+			<hr>
+			{{feed_post.posted_on}}Tried to update field webpages.StaticPage.author with a model instance, <SimpleLazyObject: <User: rhsadmin112681>>. Use a value compatible with CharField.
+			<hr>
+			{% if user.is_authenticated %}
+				{{feed_post.post_author}}
+			{% endif %}
+		</div>
+	</div>
+	
+	
+{% endblock content %}

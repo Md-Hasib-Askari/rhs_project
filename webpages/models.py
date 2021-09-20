@@ -20,7 +20,7 @@ class StaticPage(models.Model):
     page_content = RichTextUploadingField(blank=True)
     posted_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    author = models.CharField(max_length=100)
+    author = models.CharField(max_length=100, blank=True, editable=False)
 
     def __str__(self):
         return self.page_name

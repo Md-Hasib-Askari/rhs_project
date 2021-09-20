@@ -91,8 +91,10 @@
                 </ul>
             </div>
             {% if user.is_authenticated %}
-                <a href="{% url 'admin:index' %}" class="btn btn-outline-success auth-btn btn-sm mr-1">Dashboard</a>
-                <a href="{% url 'admin:logout' %}" class="btn btn-danger auth-btn btn-sm">Logout</a>
+		<div>
+                	<a href="{% url 'admin:index' %}" class="btn btn-outline-success auth-btn btn-sm mr-1">Dashboard</a>
+                	<a href="{% url 'admin:logout' %}" class="btn btn-danger auth-btn btn-sm">Logout</a>
+		</div>
             {% else %}
                 <a href="{% url 'admin:login' %}" class="btn btn-danger auth-btn btn-sm">Login</a>
             {% endif %}

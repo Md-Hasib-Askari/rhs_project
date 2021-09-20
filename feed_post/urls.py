@@ -13,4 +13,7 @@ urlpatterns = [
     path('admission_notice/', views.admission_notices, name='admission_notices'),
     path('admission_notice/<str:id>', views.admission_notice, name='admission_notice'),
 
+    # Notice Page of webpages
+    path('notices/', views.notices, name='notices'),
+    path('notice/<str:id>', views.notice, name='notice'),
 ]

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9+#^m2z#a)1)+wd46%90__rv9f*b+q&wdg$^787hge+kwd$d%s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-3-135-33-207.us-east-2.compute.amazonaws.com', 'localhost', '127.0.0.1',]
 
 
 # Application definition
@@ -88,10 +88,18 @@ WSGI_APPLICATION = 'rhs_project.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'sqlite3': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rhs',
+        'USER': 'rhsadmin112681',
+        'PASSWORD': '11Rh5AdMin2681',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
 }
 
 
@@ -132,7 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = [ BASE_DIR / 'static',]
+STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT =  BASE_DIR / 'media'
@@ -155,13 +163,13 @@ JAZZMIN_SETTINGS = {
     "site_header": "RHS Admin",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    # "site_logo": "books/img/logo.png",
+    "site_logo": "core/images/logo/logo.png",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
 
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": None,
+    "site_icon": "core/images/favicon/favicon.png",
 
     # Welcome text on the login screen
     "welcome_sign": "Welcome to the RHS Admin Panel",

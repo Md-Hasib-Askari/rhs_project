@@ -5,6 +5,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # HEADER SECTION
 class HeaderInfo(models.Model):
+    favicon = models.ImageField(upload_to='images/favicon', blank=True, null=True)
     phone_no = models.CharField(max_length=17)
     email = models.EmailField(blank=True)
     logo = models.ImageField(upload_to='images/logo/', blank=True,null=True)
@@ -30,7 +31,7 @@ class HomeSlider(models.Model):
     slider_author = models.CharField(max_length=100, editable=False)
 
     def __str__(self):
-        return self.slider_author
+        return str(self.slider_author)
 
     # Admin Panel Title
     class Meta:
@@ -47,7 +48,7 @@ class SideBarBanner(models.Model):
     
 
     def __str__(self):
-        return self.author
+        return str(self.author)
 
     class Meta:
         verbose_name_plural = 'Add Banner Image'

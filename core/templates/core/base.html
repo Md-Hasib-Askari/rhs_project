@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{header_data.favicon.url}}" type="image/gif" sizes="16x16">
 
     <link rel="stylesheet" href="{% static 'core/css/calendar.css' %}">
 
@@ -14,7 +15,7 @@
 
     <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
 
-    <title>{% block title %}{% endblock title %} | Rasulpur High School</title>
+    <title>{% block title %}{{page_content.page_name|default:"Home"}}{% endblock title %} | Rasulpur High School</title>
   </head>
   <body>
 
@@ -137,7 +138,7 @@
               <!-- Footer Section -->
               <div class="row primary-bar text-light mt-3">
                 <div class="col-12 text-center">
-                    <p class="my-3">Copyright &copy All rights reserved. Developed by <a href="#" class="text-danger">Md Hasib Askari</a></p>
+                    <p class="my-3">Copyright &copy All rights reserved. Developed by <a href="https://www.linkedin.com/in/md-hasib-askari-66602a1b8" class="text-danger" target="_blank"><strong>Md Hasib Askari</strong></a></p>
                 </div>
               </div>
 

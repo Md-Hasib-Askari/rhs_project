@@ -7,15 +7,13 @@
 		<div class="card-body">
 			{{feed_post.post_content|safe}}
 			<hr>
-			{% if post.post_thumbnail %}
-					<img src="{{feed_post.post_thumbnail.url}}" alt="" height="150px" width="150px">
+			<small>{{feed_post.privacy}}</small>
+			<hr>
+			<small>{{feed_post.posted_on|date}}</small>
+			{% if user.is_authenticated %}
+				<hr>
+				<small>{{feed_post.post_author}}</small>
 			{% endif %}
-			<hr>
-			{{feed_post.privacy}}
-			<hr>
-			{{feed_post.posted_on}}
-			<hr>
-			{{feed_post.post_author}}
 		</div>
 	</div>
 	

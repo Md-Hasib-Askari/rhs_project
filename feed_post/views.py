@@ -62,3 +62,16 @@ def admission_notice(request, id):
     
     return render(request, 'feed_post/admission_notice.html', context)
 
+# All Admission Notices
+def notices(request):
+    template_name = 'feed_post/notices.html'
+
+    return render(request, template_name, context)
+
+# Single Admission Notice
+def notice(request, id):
+    single_notice = NoticeBoard.objects.get(id=id)
+
+    context['single_notice'] = single_notice
+    template_name = 'feed_post/notice.html'
+    return render(request, template_name, context)

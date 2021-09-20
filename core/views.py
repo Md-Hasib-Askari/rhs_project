@@ -8,9 +8,18 @@ from webpages.common_db_imports import *
 
 from dashboard.models import HeaderInfo, HomeSlider, SideBarBanner, UsefulLink
 from feed_post.models import NewsFeed, NoticeBoard
+from .models import IPAddress
 
 # Create your views here.
 def home(request):
+    # IP Check
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+
+    IPAddress.objects.create(ip_address = ip)
 
     # Slider Section
     slider_images = HomeSlider.objects.all()[::-1]

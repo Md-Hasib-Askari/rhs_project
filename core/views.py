@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 # Create your views here.
 from django.shortcuts import render, redirect
 
-from webpages.common_db_imports import *
+from webpages.common_db_imports import extractData
 
 from dashboard.models import HeaderInfo, HomeSlider, SideBarBanner, UsefulLink
 from feed_post.models import NewsFeed, NoticeBoard
@@ -12,6 +12,8 @@ from .models import IPAddress
 
 # Create your views here.
 def home(request):
+    context = extractData()
+
     # IP Check
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:

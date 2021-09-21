@@ -1,11 +1,13 @@
 from django.shortcuts import render
 
-from webpages.common_db_imports import *
+from webpages.common_db_imports import extractData
 from webpages.models import StaticPage
 
 
 # Create your views here.
 def photo_gallery(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='photo_gallery')
     context['page_content'] = page_content
 
@@ -14,6 +16,8 @@ def photo_gallery(request):
     return render(request, template_name, context)
 
 def video_gallery(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='video_gallery')
     context['page_content'] = page_content
 

@@ -6,6 +6,8 @@ from webpages.models import StaticPage
 
 # Create your views here.
 def rules_regulations(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='rules_regulations')
     context['page_content'] = page_content
 
@@ -14,6 +16,8 @@ def rules_regulations(request):
 
 
 def teaching_method(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='teaching_method')
     context['page_content'] = page_content
 
@@ -22,6 +26,8 @@ def teaching_method(request):
 
 
 def teachers_training(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='teachers_training')
     context['page_content'] = page_content
 
@@ -30,6 +36,8 @@ def teachers_training(request):
 
 
 def student_support(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='student_support')
     context['page_content'] = page_content
 
@@ -38,6 +46,8 @@ def student_support(request):
 
 
 def scholarship(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='scholarship')
     context['page_content'] = page_content
 
@@ -46,6 +56,8 @@ def scholarship(request):
 
 
 def result(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='result')
     context['page_content'] = page_content
 
@@ -54,6 +66,8 @@ def result(request):
 
     
 def co_curricular_activities(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='co_curricular_activities')
     context['page_content'] = page_content
 
@@ -63,6 +77,8 @@ def co_curricular_activities(request):
 
 
 def facilities(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='facilities')
     context['page_content'] = page_content
 
@@ -71,6 +87,8 @@ def facilities(request):
 
 
 def faculties_staffs(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='faculties_staffs')
     context['page_content'] = page_content
 
@@ -79,6 +97,8 @@ def faculties_staffs(request):
 
 
 def prospectus_syllabus(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='prospectus_syllabus')
     context['page_content'] = page_content
 

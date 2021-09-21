@@ -1,10 +1,12 @@
 from django.shortcuts import render
 
-from webpages.common_db_imports import *
+from webpages.common_db_imports import extractData
 from webpages.models import StaticPage
 
 # Create your views here.
 def calendar(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='calendar')
     context['page_content'] = page_content
 
@@ -13,6 +15,8 @@ def calendar(request):
     return render(request, template_name, context)
 
 def time(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='time')
     context['page_content'] = page_content
 
@@ -21,6 +25,8 @@ def time(request):
     return render(request, template_name, context)
 
 def jobs(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='jobs')
     context['page_content'] = page_content
 
@@ -30,6 +36,8 @@ def jobs(request):
 
 
 def teachers_info(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='teachers_info')
     context['page_content'] = page_content
 
@@ -39,6 +47,8 @@ def teachers_info(request):
 
 
 def staffs_info(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='staffs_info')
     context['page_content'] = page_content
 
@@ -47,6 +57,8 @@ def staffs_info(request):
     return render(request, template_name, context)
 
 def student_statistics(request):
+    context = extractData()
+
     page_content = StaticPage.objects.get(slug='student_statistics')
     context['page_content'] = page_content
 

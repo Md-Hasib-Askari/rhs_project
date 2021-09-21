@@ -1,10 +1,12 @@
 from django.shortcuts import render
 
-from webpages.common_db_imports import *
+from webpages.common_db_imports import extractData
 from webpages.models import StaticPage
 
 # Create your views here.
 def celebrations(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='celebrations')
     context['page_content'] = page_content
 
@@ -13,6 +15,8 @@ def celebrations(request):
     return render(request, template_name, context)
 
 def sports(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='sports')
     context['page_content'] = page_content
 
@@ -21,6 +25,8 @@ def sports(request):
     return render(request, template_name, context)
 
 def cultural_activities(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='cultural_activities')
     context['page_content'] = page_content
 
@@ -29,6 +35,8 @@ def cultural_activities(request):
     return render(request, template_name, context)
 
 def publications(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='publications')
     context['page_content'] = page_content
 

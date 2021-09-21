@@ -6,7 +6,6 @@ $(document).ready( ()=> {
     var card_body_image_height = card_body_image_width * 3/4;
     $('.card .card-body p img').css({'width': card_body_image_width, 'height': card_body_image_height, 'margin-bottom': '10px'});
 
-
     // Facebook Sidebar Plugin width
     var facebook_plugin_width = $('.facebool-plugin').width();
     $('.facebool-plugin > .card-body > iframe').attr('width', facebook_plugin_width);

@@ -1,12 +1,12 @@
 from django.shortcuts import render
 
-from webpages.common_db_imports import *
+from webpages.common_db_imports import extractData
 from webpages.models import StaticPage
-
-
 
 # Create your views here.
 def welcome_note(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='welcome_note')
     context['page_content'] = page_content
 
@@ -14,6 +14,8 @@ def welcome_note(request):
     return render(request, template_name, context)
 
 def about_us(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='about_us')
     context['page_content'] = page_content
 
@@ -22,6 +24,8 @@ def about_us(request):
     return render(request, template_name, context)
 
 def vision_mission(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='vision_mission')
     context['page_content'] = page_content
 
@@ -29,6 +33,8 @@ def vision_mission(request):
     return render(request, template_name, context)
 
 def principal_message(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='principal_message')
     context['page_content'] = page_content
 
@@ -36,6 +42,8 @@ def principal_message(request):
     return render(request, template_name, context)
 
 def governing_body(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='governing_body')
     context['page_content'] = page_content
 
@@ -43,6 +51,8 @@ def governing_body(request):
     return render(request, template_name, context)
 
 def curriculum(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='curriculum')
     context['page_content'] = page_content
     
@@ -50,6 +60,8 @@ def curriculum(request):
     return render(request, template_name, context)
 
 def maps(request):
+    context = extractData()
+    
     page_content = StaticPage.objects.get(slug='maps')
     context['page_content'] = page_content
 

@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
-from webpages.common_db_imports import *
+from webpages.common_db_imports import extractData
 from .models import NewsFeed, JobsBoard, AdmissionNotice
 
 # Home Page Feed Posts
 def feed_post(request, id):
+    context = extractData()
+
     feed_post = NewsFeed.objects.get(id=id)
     context['feed_post'] = feed_post
     return render(request, 'feed_post/feed_post.html', context)
@@ -13,6 +15,8 @@ def feed_post(request, id):
 
 # All Jobs
 def jobs(request):
+    context = extractData()
+    
     jobs = JobsBoard.objects.all()[::-1]
 
     # Pagination from Job Post
@@ -28,6 +32,8 @@ def jobs(request):
 
 # Single Job
 def job(request, id):
+    context = extractData()
+
     job = JobsBoard.objects.get(id=id)
 
     context_list = [('single_job', job)]
@@ -39,6 +45,8 @@ def job(request, id):
 
 # All Admission Notices
 def admission_notices(request):
+    context = extractData()
+
     admission_notices = AdmissionNotice.objects.all()[::-1]
 
     # Pagination from Job Post
@@ -54,6 +62,8 @@ def admission_notices(request):
 
 # Single Admission Notice
 def admission_notice(request, id):
+    context = extractData()
+
     admission_notice = AdmissionNotice.objects.get(id=id)
 
     context_list = [('single_admission_notice', admission_notice)]
@@ -64,12 +74,15 @@ def admission_notice(request, id):
 
 # All Admission Notices
 def notices(request):
-    template_name = 'feed_post/notices.html'
+    context = extractData()
 
+    template_name = 'feed_post/notices.html'
     return render(request, template_name, context)
 
 # Single Admission Notice
 def notice(request, id):
+    context = extractData()
+
     single_notice = NoticeBoard.objects.get(id=id)
 
     context['single_notice'] = single_notice

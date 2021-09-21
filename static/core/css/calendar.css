@@ -256,7 +256,7 @@
     grid-template-columns: repeat(3, 33.33%);
     gap: 0;
     display: grid;
-    transform: scale(1.5);
+    transform: scale(1);
     visibility: hidden;
     pointer-events: none;
 }
@@ -328,5 +328,12 @@
     }
     .calendar-week-day {
         justify-content: space-around;
+    }
+}
+
+@media (max-width: 1620px){
+    .calendar-header {
+        flex-direction: column;
+        font-size: 1rem;
     }
 }

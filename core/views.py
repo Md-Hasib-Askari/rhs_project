@@ -21,7 +21,8 @@ def home(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
 
-    IPAddress.objects.create(ip_address = ip)
+    if ip != '103.126.14.2':
+    	IPAddress.objects.create(ip_address = ip)
 
     # Slider Section
     slider_images = HomeSlider.objects.all()[::-1]

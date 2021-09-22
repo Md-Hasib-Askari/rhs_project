@@ -12,8 +12,10 @@
     --bangla-font: 'Hind Siliguri', sans-serif;
 
     /* Colors */
-    --primary-color: #437fc7;
-    --secondary-color: #6daffe;
+    /* --primary-color: #437fc7;
+       --secondary-color: #6daffe; */
+    --primary-color: #28a745;
+    --secondary-color: #28a745;
     --bg-color: #edf6ff;
     --text-color: #424242;
 
@@ -31,8 +33,17 @@ html, body{
     background-color: var(--bg-color);
     color: var(--text-color)
 }
+.header-bar {
+    background: rgb(0,206,79);
+    background: -moz-linear-gradient(180deg, rgba(0,206,79,1) 0%, rgba(0,220,90,1) 17%, rgba(154,238,165,1) 86%);
+    background: -webkit-linear-gradient(180deg, rgba(0,206,79,1) 0%, rgba(0,220,90,1) 17%, rgba(154,238,165,1) 86%);
+    background: linear-gradient(180deg, rgba(0,206,79,1) 0%, rgba(0,220,90,1) 17%, rgba(154,238,165,1) 86%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ce4f",endColorstr="#9aeea5",GradientType=1);
+}
 .block-test a img {
     margin: 10px 0;
+    border-radius: 50%;
+    border: 2px solid #dc3545;
 }
 .header-title {
     font-family: var(--header-font);

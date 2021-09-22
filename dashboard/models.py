@@ -9,7 +9,7 @@ class HeaderInfo(models.Model):
     phone_no = models.CharField(max_length=17)
     email = models.EmailField(blank=True)
     logo = models.ImageField(upload_to='images/logo/', blank=True,null=True)
-    header_title = models.CharField(max_length=256)
+    header_title = models.ImageField(upload_to='images/header_title/', null=True)
     header_slogan = models.CharField(max_length=256)
     posted_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

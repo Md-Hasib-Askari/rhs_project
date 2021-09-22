@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-12">
               <!-- Top contact section -->
-              <div class="row primary-bar text-light">
+              <div class="row bg-dark text-light">
                   <div class="col-9 mx-auto">
                     <div class="d-flex top-contact-info">
                         <div class="phone">
@@ -41,16 +41,16 @@
               </div>
 
               <!-- Header Section -->
-              <div class="row">
+              <div class="row header-bar">
                   <div class="col-lg-9 col-md-12 header-div mx-auto d-flex">
                       <div class="block-test">
                           <a href="{% url 'home' %}"><img src="{{header_data.logo.url}}" alt="Institution Logo" width="150px" height="150px"></a>
                       </div>
 
-                      <div class="header d-flex h-100 flex-column ml-3 mt-3">
+                      <div class="header d-flex h-100 flex-column ml-3 mt-3 text-center">
 
                           <div class="header-title">
-                              <h2 class="display-4">{{header_data.header_title}}</h2>
+                              <h2><img class="img-fluid w-75" src="{{header_data.header_title.url}}" alt="Rasulpur High School"/></h2>
                           </div>
                           <div class="header-slogan">
                               <p class="lead">{{header_data.header_slogan}}</p>
